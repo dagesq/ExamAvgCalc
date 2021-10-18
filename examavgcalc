@@ -1,0 +1,40 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main ()
+{
+   int exam_homer, exam_lisa, exam_ralph;  //the names home, lisa, and ralph are just random. you can replace the names. 
+
+   cout <<"Enter exam score for Homer? ";  
+   cin >> exam_homer;
+
+   cout <<"Enter exam score for Lisa? ";
+   cin >> exam_lisa;
+
+   cout <<"Enter exam score for Ralph? " ;
+   cin >> exam_ralph;
+
+   int const NUM_STUDENTS = 3;
+   
+   double exam_avg= (exam_homer + exam_lisa + exam_ralph)/static_cast<double>(NUM_STUDENTS);
+
+   double sq_diff_homer= (exam_homer - exam_avg)*(exam_homer - exam_avg);
+
+   double sq_diff_lisa= (exam_lisa - exam_avg)*(exam_lisa - exam_avg);
+
+   double sq_diff_ralph= (exam_ralph - exam_avg)*(exam_ralph - exam_avg);
+
+   double exam_variance= (sq_diff_homer + sq_diff_lisa + sq_diff_ralph)/(NUM_STUDENTS - 1);
+
+   double exam_stddev= sqrt(exam_variance);
+
+   cout <<"\n";
+   cout << fixed << setprecision(2);
+   cout << "The exam average score is:      " << exam_avg << "%\n";
+   cout << "The exam standard deviation is: " << exam_stddev << "\n";
+
+
+   return 0;
+}
